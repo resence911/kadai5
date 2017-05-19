@@ -18,5 +18,16 @@ public class kadai5Test {
 		 String actual = IntToEng.translateEng(13);
 		 assertThat(actual, is(expected));
 	}
-
+	public void test65() {
+		 IntToEng ite = new IntToEng();
+		 String expected = "sixtyfive";
+		 String actual = IntToEng.translateEng(65);
+		 assertThat(actual, is(expected));
+	}
+	public void test238() {
+		 IntToEng ite = new IntToEng();
+		 String expected = "twohundredthirtyeight";
+		 String actual = IntToEng.translateEng(238);
+		 assertThat(actual, is(expected));
+	}
 }
