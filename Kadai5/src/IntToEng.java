@@ -24,9 +24,25 @@ public class IntToEng {
     		return fivedigit(n);
     	} else if(100000<=n && n <= 999999){
     		return sixdigit(n);
+    	} else if(1000000<=n && n<=9999999) {
+    		return sevendigit(n);
+    	} else if(10000000<=n && n<=99999999) {
+    		return eightdigit(n);
     	}
     	return "error";
     }
+
+	public static String eightdigit(int n) {
+		int a = n/1000000;
+		int b = n%1000000;
+		return twodigit(a)+"million"+sixdigit(b);
+	}
+
+	public static String sevendigit(int n) {
+		int a = n/1000000;
+		int b = n%1000000;
+		return one2nineteen[a]+"million"+sixdigit(b);
+	}
 
 	public static String sixdigit(int n) {
 		int a = n / 1000;
