@@ -23,24 +23,26 @@ public class IntToEng {
     	} else if(20<=n && n<=99) {
     		return twodigit(n);
     	} else if(100<=n && n<=999) {
-    		n = n/100;
     		return threedigit(n);
     	} else if(1000<=n && n <=9999){
-    		n = n / 1000;
     		return fourdigit(n);
     	}
     	return "error";
     }
 
-	public static String twodigit(int n) {
-		return ty[n/10-2]+one2ten[n%10];
-	}
-	
-	public static String threedigit(int n) {
-		return one2ten[n]+"hundred"+twodigit(n);
+	public static String fourdigit(int n) {
+		int a = n/1000;
+		int b = n%1000;
+		return one2ten[a]+"thousand"+threedigit(b);
 	}
 
-	public static String fourdigit(int n) {
-		return one2ten[n] + "thousand" + threedigit(n/10) + twodigit(n);
+	public static String threedigit(int n) {
+		int a = n/100;
+		int b = n%100;
+		return one2ten[a]+"hundred"+twodigit(b);
+	}
+
+	public static String twodigit(int n) {
+		return ty[n/10-2]+one2ten[n%10];
 	}
 }
