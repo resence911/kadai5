@@ -30,4 +30,10 @@ public class kadai5Test {
 		 String actual = IntToEng.translateEng(238);
 		 assertThat(actual, is(expected));
 	}
+	public void test1996() {
+		 IntToEng ite = new IntToEng();
+		 String expected = "one";
+		 String actual = IntToEng.translateEng(1996);
+		 assertThat(actual, is(expected));
+	}
 }
